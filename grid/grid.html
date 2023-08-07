@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .grid_container{
+      display: grid;
+      grid-template-rows: 70px 200px 70px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px; /*fractional unit 사용*/
+      
+    }
+    .grid-item {
+      background-color: blue;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header{
+      grid-column: 1 / -1; /* grid column: grid start가 1이고 grid end가 4 (경계선 맨 처음부터 맨 끝까지의 영역*/
+      grid-row: 1 / 2; /* grid row: grid start가 1이고 grid end가 2*/
+    }
+    .nav{
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+    .main{
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
+    .aside{
+      grid-column: 3/4;
+      grid-row: 2/3;
+    }
+    .footer{
+      grid-column: 1/-1;
+      grid-row: 3/4;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="grid_container">
+    <div class="grid-item header">header</div>
+    <div class="grid-item nav">nav</div>
+    <div class="grid-item main">main</div>
+    <div class="grid-item aside">aside</div>
+    <div class="grid-item footer">footer</div>
+
+  </div>
+</body>
+</html>
